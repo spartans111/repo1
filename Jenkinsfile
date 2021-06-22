@@ -4,10 +4,8 @@ pipeline {
         stage ('multi test') {
             steps {
                     sh "echo 'success master'"
-                    sh "git branch" 
-                
+                    sh "git branch"
             }
         }
-
     }
 }
