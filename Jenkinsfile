@@ -5,10 +5,7 @@ pipeline {
             steps {
                     sh "echo 'success'"
                     sh "git branch"
-                
-                
                 }
-            }
         }
 
     }
