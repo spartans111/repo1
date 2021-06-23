@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('multi test') {
             steps {
-                    sh "echo '  fe atture test'"
+                    sh "echo '  fessatture test'"
                     sh "git branch"
             }
         }
