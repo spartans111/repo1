@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('multi test-1') {
             steps {
-                    sh "echo 'job1"
+                    sh "echo 'job1'"
             }
         }
     }
