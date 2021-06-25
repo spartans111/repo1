@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    stages {
+        stage ('job1') {
+            steps {
+                    sh "echo 'Building Job1'"
+                    build job: 'job1'
+            }
+        }
+        stage ('job2') {
+            steps {
+                    sh "echo 'Building Job1'"
+                    build job: 'job2'
+                    
+            }
+        }
+    }
+    post {
+     success {
+       sh "echo 'helm job'"
+       build job: 'helm'
+     }
+   }
+}

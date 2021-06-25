@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage ('helm test') {
+            steps {
+                    sh "echo 'helm job"
+            }
+        }
+    }
+}

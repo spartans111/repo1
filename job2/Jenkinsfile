@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage ('multi test-2') {
+            steps {
+                    sh "echo 'job2"
+            }
+        }
+    }
+}
