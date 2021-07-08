@@ -28,9 +28,15 @@ pipeline {
             steps {
                 script {
                     load "./env2.groovy"
-                    sh "echo ${env.ECS_CLUSTER}"
+//                     sh "echo ${env.ECS_CLUSTER}"
+                    echo(${env.ECS_CLUSTER})
                 }
             }
         }
     }
+}
+
+def echo(var){
+    sh "echo $var"
+    //add code for this method
 }
