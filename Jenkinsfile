@@ -10,13 +10,24 @@ pipeline {
 //                     sh "git branch"
 //             }
 //         }
-        stage ('multi env') {
+        stage ('multi env dev') {
             when {
                 expression { params.ENV == 'dev' }
             }
             steps {
                 script {
                     load "./env1.groovy"
+                    sh "echo ${env.ECS_CLUSTER}"
+                }
+            }
+        }
+        stage ('multi env qa') {
+            when {
+                expression { params.ENV == 'qa' }
+            }
+            steps {
+                script {
+                    load "./env2.groovy"
                     sh "echo ${env.ECS_CLUSTER}"
                 }
             }
