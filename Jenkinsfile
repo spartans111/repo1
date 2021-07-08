@@ -29,14 +29,14 @@ pipeline {
                 script {
                     load "./env2.groovy"
 //                     sh "echo ${env.ECS_CLUSTER}"
-                    echo(${env.ECS_CLUSTER})
+                    echo_func(env.ECS_CLUSTER)
                 }
             }
         }
     }
 }
 
-def echo(var){
+def echo_func(var){
     sh "echo $var"
     //add code for this method
 }
