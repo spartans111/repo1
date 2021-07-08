@@ -17,22 +17,34 @@ pipeline {
             steps {
                 script {
                     load "./env1.groovy"
-                    sh "echo ${env.ECS_CLUSTER}"
+//                     sh "echo ${env.ECS_CLUSTER}"
                 }
             }
         }
         stage ('multi env qa') {
-            when {
-                expression { params.ENV == 'qa' }
-            }
+//             when {
+//                 expression { params.ENV == 'qa' }
+//             }
             steps {
                 script {
-                    load "./env2.groovy"
-//                     sh "echo ${env.ECS_CLUSTER}"
-                    echo_func(env.ECS_CLUSTER)
+//                     load "./env2.groovy"
+                    sh "echo ${env.ECS_CLUSTER}"
+//                     echo_func(env.ECS_CLUSTER)
                 }
             }
         }
+//         stage ('multi env qa') {
+//             when {
+//                 expression { params.ENV == 'qa' }
+//             }
+//             steps {
+//                 script {
+//                     load "./env2.groovy"
+// //                     sh "echo ${env.ECS_CLUSTER}"
+//                     echo_func(env.ECS_CLUSTER)
+//                 }
+//             }
+//         }
     }
 }
 
