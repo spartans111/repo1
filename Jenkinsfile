@@ -2,6 +2,7 @@ pipeline {
     agent any
     parameters {
         choice(name: 'ENV', choices: ['dev','qa'], description: 'Choose Environment')
+        string(defaultValue: 'env1', name: 'file')
     }
     stages {
 //         stage ('multi test') {
@@ -16,7 +17,7 @@ pipeline {
             }
             steps {
                 script {
-                    load "./env1.groovy"
+                    load "./${params.file}.groovy"
 //                     sh "echo ${env.ECS_CLUSTER}"
                 }
             }
