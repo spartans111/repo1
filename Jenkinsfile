@@ -30,7 +30,7 @@ pipeline {
                 script {
                     sh '''
                     version=${VERSION}
-                    sed -i -e 's/0.1.0/$version/g' pyproject.toml
+                    sed -i -e 's/0.1.0/\$version/g' pyproject.toml
                     cat pyproject.toml
                     '''
                     
