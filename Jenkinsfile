@@ -2,7 +2,7 @@ pipeline {
     agent any
 //     parameters {
 //         choice(name: 'ENV', choices: ['dev','qa'], description: 'Choose Environment')
-//         string(defaultValue: 'env1', name: 'file')
+        string(defaultValue: '0.3.0', name: 'VERSION')
 //     }
     stages {
 //         stage ('multi test') {
@@ -29,11 +29,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    current_version=$(awk -F'[ ="]+' '$1 == "version" { print $2 }' pyproject.toml)
-                    to_add="0.1.0"
-                    new_version=$((current_version + to_add))
-                    echo `$new_version | bc`
-                    sed -i /0.1.0/$new_version/g pyproject.toml
+                    sed -i -e 's/0.1.0/${VERSION}/g' pyproject.toml
                     cat pyproject.toml
                     '''
                     
