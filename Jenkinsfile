@@ -30,8 +30,8 @@ pipeline {
                 script {
                     sh '''
                     current_version=$(awk -F'[ ="]+' '$1 == "version" { print $2 }' pyproject.toml)
-                    let j=$current_version+0.1.0
-                    sed -i /0.1.0/$j/g pyproject.toml
+                    new_version=$current_version + $current_version
+                    sed -i /0.1.0/$new_version/g pyproject.toml
                     cat pyproject.toml
                     '''
                     
