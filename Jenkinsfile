@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    version=${params.VERSION}
+                    version=${VERSION}
                     sed -i -e 's/0.1.0/$version/g' pyproject.toml
                     cat pyproject.toml
                     '''
