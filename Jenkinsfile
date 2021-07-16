@@ -31,7 +31,7 @@ pipeline {
                     sh '''
                     current_version=$(awk -F'[ ="]+' '$1 == "version" { print $2 }' pyproject.toml)
                     to_add=0.1.0
-                    new_version = $current_version + $to_add
+                    new_version=$current_version + $to_add
                     echo `$new_version | bc`
                     sed -i /0.1.0/$new_version/g pyproject.toml
                     cat pyproject.toml
