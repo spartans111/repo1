@@ -1,9 +1,9 @@
 pipeline {
     agent any
-//     parameters {
+    parameters {
 //         choice(name: 'ENV', choices: ['dev','qa'], description: 'Choose Environment')
         string(defaultValue: '0.3.0', name: 'VERSION')
-//     }
+    }
     stages {
 //         stage ('multi test') {
 //             steps {
