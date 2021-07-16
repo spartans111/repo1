@@ -1,0 +1,3 @@
+[tool.poetry]
+name = "dpcore_python2"
+version = "0.1.0"
